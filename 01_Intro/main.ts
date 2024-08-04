@@ -9,3 +9,9 @@
 // ex in javascript we can add 2 + '2' and it will return 22 as a string which is not what we want
 // in typescript we can't do that, we have to define the type of the variables
 // ex null + 2 will return 2 in javascript, but in typescript it will return an error
+// what typescript does - static checking of the code
+// static checking is a way to check the code before it runs
+// it checks the code for errors before it runs in the ide or the editor
+// it checks the code for errors before it runs in the browser
+// typescript is a deveopment tool our project still runs in the javascript
+// it is done to avoid errors in the code
