@@ -21,16 +21,66 @@
 // }
 
 // type alias - a way to define a type that can be used in multiple places
+// type User = {
+//     name: string;
+//     email: string;
+//     isPaid: boolean
+// }
+// // advantage of using type alias is that we can use it in multiple places
+// function createUser1(user: User): User{
+//     console.log(`name: ${user.name}, email: ${user.email}, isPaid: ${user.isPaid}`);
+//     return {name: user.name, email: user.email, isPaid: user.isPaid};
+// }
+// createUser1({name: "ankit", email: "ankit@mail", isPaid: true});
+
+//! read only
 type User = {
+    readonly _id: string; // readonly is a way to make the variable immutable meaning it cannot be changed
     name: string;
     email: string;
-    isPaid: boolean
+    isActive: true;
+    creditCard ?: number; // ? is a way to define an optional property in the object 
 }
-// advantage of using type alias is that we can use it in multiple places
-function createUser1(user: User): User{
-    console.log(`name: ${user.name}, email: ${user.email}, isPaid: ${user.isPaid}`);
-    return {name: user.name, email: user.email, isPaid: user.isPaid};
+let myUser: User = {
+    _id: "123",
+    name: "ankit",
+    email: "ankit@mail",
+    isActive: true
 }
-createUser1({name: "ankit", email: "ankit@mail", isPaid: true});
+
+type cardNumber = {
+    cardNumber: string
+}
+type cardDate = {
+    cardDate: string
+}
+// type cardCvv = {
+//     cardCvv: string
+// }
+
+// creating new type based on the existing types
+type cardDetails = cardNumber & cardDate & {cvv: number};
+let mycard = {
+    cardNumber: "1234567890",
+    cardDate: "12/23",
+    cardCvv: 242
+}
+console.log(mycard);
+
+// so if we want to give credit card info to the user we can do that but it is optional so we can skip that as well
+
+let myUser1: User = {
+    _id: "123",
+    name: "ankit",
+    email: "ankit@mail",
+    isActive: true,
+    creditCard: 1234567890
+}
+//myUser._id = 223; // here we cannot change the value of _id as it is readonly
+// rest other values can be changed 
+myUser.name = "ankit mishra";
+console.log(myUser);
+console.log(myUser1);
+
 
 export{}
