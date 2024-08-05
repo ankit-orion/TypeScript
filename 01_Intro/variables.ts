@@ -19,4 +19,25 @@ num = 56.75; // this is allowed as number can be a float as well
 // we don't have to specifically define int and float in typescript because we have only one type number and it automatically takes care of it
 let loggedIn: boolean = true;
 console.log(loggedIn);
+
+// any keyword
+let hero; // Variable 'hero' implicitly has an 'any' type, but a better type may be inferred from usage.
+function getHero(){
+    return "thor";
+}
+hero = getHero(); // here the hero will be referred to as any type because we have not defined the type of the variable
+// we can return any kind of data type from the function and it will be accepted by the variable hero
+// so we have to write the type of the variables an any type is a way to define a variable that can be of any type
+// another example
+let value: number;
+function getValue(){
+    // return "thor"; // this will return a string but we are storing it in a number type so we have to return a number
+    return 5;
+}
+// value = getValue(); // this will give an error as we are trying to assign a string to a number type variable
+
+// when u don't specify a type, and typescript cannot infer the type, it will assign the type as any
+// you usually want to avoid using any as it defeats the purpose of using typescript alsa it is not type-checked
+
+
 export {} // this is to avoid the error : Cannot redeclare block-scoped variable 'a'.ts(2451)
