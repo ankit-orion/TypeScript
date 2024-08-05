@@ -40,4 +40,5 @@ function getValue(){
 // you usually want to avoid using any as it defeats the purpose of using typescript alsa it is not type-checked
 
 
+
 export {} // this is to avoid the error : Cannot redeclare block-scoped variable 'a'.ts(2451)
