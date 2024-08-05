@@ -1,6 +1,4 @@
-// syntax of a variable declaration in typescript
-// let variableName: type = value;
-let a: number = 5;
+t a: number = 5;
 let b: number = 6;
 let c: number = a + b;
 console.log(c);
