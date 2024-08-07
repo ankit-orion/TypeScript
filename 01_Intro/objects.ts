@@ -41,6 +41,7 @@ type User = {
     isActive: true;
     creditCard ?: number; // ? is a way to define an optional property in the object 
 }
+
 let myUser: User = {
     _id: "123",
     name: "ankit",
